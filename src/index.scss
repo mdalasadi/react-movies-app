@@ -25,12 +25,11 @@ body {
   line-height: 1.5;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul {
   list-style: none;
 }
 
-a:not([class]) {
+a {
   text-decoration: none;
 }
 
