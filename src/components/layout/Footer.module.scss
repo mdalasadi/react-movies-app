@@ -1,0 +1,18 @@
+.footer {
+  font-size: 1.6rem;
+  border-top: 0.1rem solid red;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+}
