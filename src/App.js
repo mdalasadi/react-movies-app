@@ -1,12 +1,21 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import PopularMovies from './pages/PopularMovies';
+import TopMovies from './pages/TopMovies';
+import UpcomingMovies from './pages/UpcomingMovies';
 
 function App() {
   return (
     <>
       <Header />
-      <h1>Hello React</h1>
+      <Routes>
+        <Route path="/" element={<PopularMovies />} />
+        <Route path="/popular" element={<PopularMovies />} />
+        <Route path="/top" element={<TopMovies />} />
+        <Route path="/upcoming" element={<UpcomingMovies />} />
+      </Routes>
       <Footer />
     </>
   );
