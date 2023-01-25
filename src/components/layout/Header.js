@@ -1,32 +1,45 @@
 import React from 'react';
 import Container from '../ui/Container';
 import styles from './Header.module.scss';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
   return (
     <nav className={styles['navbar']}>
       <Container className={styles['navbar__container']}>
-        <a href="/#" className={styles['navbar__logo']}>
+        <Link to="/" className={styles['navbar__logo']}>
           <img src="logo.png" alt="MovieMosaic" />
-        </a>
+        </Link>
         <ul className={styles['navbar__nav']}>
           <li className={styles['navbar__item']}>
-            <a href="/#" className={styles['navbar__link']}>
+            <NavLink
+              to="/popular"
+              className={styles['navbar__link']}
+              style={({ isActive }) => ({ color: isActive ? 'red' : 'black' })}
+            >
               Popular
-            </a>
+            </NavLink>
           </li>
           <li className={styles['navbar__item']}>
-            <a href="/#" className={styles['navbar__link']}>
+            <NavLink
+              to="/top"
+              className={styles['navbar__link']}
+              style={({ isActive }) => ({ color: isActive ? 'red' : 'black' })}
+            >
               Top Rated
-            </a>
+            </NavLink>
           </li>
           <li className={styles['navbar__item']}>
-            <a href="/#" className={styles['navbar__link']}>
+            <NavLink
+              to="/upcoming"
+              className={styles['navbar__link']}
+              style={({ isActive }) => ({ color: isActive ? 'red' : 'black' })}
+            >
               Upcoming
-            </a>
+            </NavLink>
           </li>
           <li className={styles['navbar__item']}>
-            <a href="/#" className={styles['navbar__link']}>
+            <a href="/" className={styles['navbar__link']}>
               Genre
             </a>
           </li>
