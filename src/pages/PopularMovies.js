@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function PopularMovies() {
-  return <h1>PopularMovies</h1>;
+  const title = 'Popular Movies';
+
+  useEffect(() => {
+    document.title = 'MovieMosaic || ' + title;
+  }, []);
+
+  return <h1>{title}</h1>;
 }
 
 export default PopularMovies;

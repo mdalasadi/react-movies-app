@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function UpcomingMovies() {
-  return <h1>UpcomingMovies</h1>;
+  const title = 'Upcoming Movies';
+
+  useEffect(() => {
+    document.title = 'MovieMosaic || ' + title;
+  }, []);
+
+  return <h1>{title}</h1>;
 }
 
 export default UpcomingMovies;
