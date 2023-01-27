@@ -11,10 +11,16 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<PopularMovies />} />
-        <Route path="/popular" element={<PopularMovies />} />
-        <Route path="/top" element={<TopMovies />} />
-        <Route path="/upcoming" element={<UpcomingMovies />} />
+        <Route path="/" element={<PopularMovies title="Popular Movies" />} />
+        <Route
+          path="/popular"
+          element={<PopularMovies title="Popular Movies" />}
+        />
+        <Route path="/top" element={<TopMovies title="Top Movies" />} />
+        <Route
+          path="/upcoming"
+          element={<UpcomingMovies title="Upcoming Movies" />}
+        />
       </Routes>
       <Footer />
     </>
