@@ -2,13 +2,14 @@ import React from 'react';
 import Container from '../ui/Container';
 import styles from './Header.module.scss';
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../../assets/images/logo.png';
 
 function Header() {
   return (
     <nav className={styles['navbar']}>
       <Container className={styles['navbar__container']}>
         <Link to="/" className={styles['navbar__logo']}>
-          <img src="logo.png" alt="MovieMosaic" />
+          <img src={logo} alt="MovieMosaic" />
         </Link>
         <ul className={styles['navbar__nav']}>
           <li className={styles['navbar__item']}>
