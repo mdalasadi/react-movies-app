@@ -1,0 +1,5 @@
+.movies {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

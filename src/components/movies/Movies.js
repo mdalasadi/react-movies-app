@@ -1,9 +1,10 @@
 import React from 'react';
 import Poster from './Poster';
+import styles from './Movies.module.scss';
 
 function Movies() {
   return (
-    <div>
+    <div className={styles['movies']}>
       <Poster />
       <Poster />
       <Poster />
