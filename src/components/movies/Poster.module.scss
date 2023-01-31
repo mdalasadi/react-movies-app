@@ -1,0 +1,16 @@
+.movies {
+  &__poster {
+    border: 1px solid red;
+  }
+
+  &__title {
+    font-size: 1.7rem;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+  }
+}
