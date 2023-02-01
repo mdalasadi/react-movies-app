@@ -1,10 +1,14 @@
 .movies {
   &__poster {
-    border: 1px solid red;
+    box-shadow: 0.5rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
   }
 
   &__title {
     font-size: 1.7rem;
+    padding: 0 1rem;
+    margin-top: 1rem;
   }
 
   &__details {
@@ -12,5 +16,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
   }
 }
