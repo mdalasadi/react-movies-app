@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import PopularMovies from './pages/PopularMovies';
 import TopMovies from './pages/TopMovies';
 import UpcomingMovies from './pages/UpcomingMovies';
+import MovieDetails from './pages/MovieDetails'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           path="/upcoming"
           element={<UpcomingMovies title="Upcoming Movies" />}
         />
+        <Route path="/id" element={<MovieDetails />} />
       </Routes>
       <Footer />
     </>
