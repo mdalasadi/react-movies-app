@@ -1,4 +1,5 @@
 import React from 'react';
+import PLayIcon from '../assets/icons/PlayIcon';
 import Container from '../components/ui/Container';
 
 function MovieDetails() {
@@ -25,7 +26,11 @@ function MovieDetails() {
               natus molestias perferendis incidunt est ad?
             </span>
           </p>
-          <p><a href="https://youtube.com" target="_blank" rel="noreferrer">View Trailer</a></p>
+          <p>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+              <PLayIcon /> View Trailer
+            </a>
+          </p>
         </div>
       </section>
     </Container>
