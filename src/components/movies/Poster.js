@@ -1,4 +1,5 @@
 import React from 'react';
+import StarIcon from '../../assets/icons/StarIcon';
 import styles from './Poster.module.scss';
 
 function Poster() {
@@ -11,7 +12,9 @@ function Poster() {
       />
       <h3 className={styles['movies__title']}>Violent Night</h3>
       <div className={styles['movies__details']}>
-        <p>8.7</p>
+        <p>
+          <StarIcon /> 8.7
+        </p>
         <p>2023</p>
       </div>
     </div>
