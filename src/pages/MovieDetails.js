@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PLayIcon from '../assets/icons/PlayIcon';
 import Container from '../components/ui/Container';
 
@@ -12,6 +13,9 @@ function MovieDetails() {
           className="movie__image"
         />
         <div className="movie__details">
+          <div className="movie__link-back">
+            <Link to="/">&larr; Go Back</Link>
+          </div>
           <h2>Violent Night</h2>
           <p>
             Runtime: <span>1 hr & 47 min</span>
