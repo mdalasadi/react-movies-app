@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PLayIcon from '../../assets/icons/PlayIcon';
+import styles from './MovieDetails.module.scss';
 
 function MovieDetails() {
   return (
-    <section className="movie">
+    <section className={styles['movie']}>
       <img
         src="https://image.tmdb.org/t/p/original/1XSYOP0JjjyMz1irihvWywro82r.jpg"
         alt="movie poster"
-        className="movie__image"
+        className={styles['movie__image']}
       />
-      <div className="movie__details">
-        <div className="movie__link-back">
+      <div className={styles['movie__details']}>
+        <div className={styles['movie__link-back']}>
           <Link to="/">&larr; Go Back</Link>
         </div>
         <h2>Violent Night</h2>
