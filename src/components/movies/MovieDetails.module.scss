@@ -1,3 +1,12 @@
 .movie {
     border: 0.1rem solid red;
+    display: flex;
+    gap: 1rem;
+
+    &__image {
+        width: 20%;
+    }
+
+    &__details {
+    }
 }
