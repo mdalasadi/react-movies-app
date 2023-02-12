@@ -13,27 +13,32 @@ function MovieDetails() {
       />
       <div className={styles['movie__details']}>
         <div className={styles['movie__link-back']}>
-          <Link to="/">&larr; Go Back</Link>
+          <Link to="/">
+            <i>&lt;</i> Go Back
+          </Link>
         </div>
-        <h2>Violent Night</h2>
-        <p>
+        <h2 className={styles['movie__title']}>Violent Night</h2>
+        <p className={styles['movie__runtime']}>
           Runtime: <span>1 hr & 47 min</span>
         </p>
-        <p>
+        <p className={styles['movie__genres']}>
           Genres: <span>Romance, Drama</span>
         </p>
-        <p>
+        <p className={styles['movie__desc']}>
           Description:
           <span>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
             natus molestias perferendis incidunt est ad?
           </span>
         </p>
-        <p>
-          <a href="https://youtube.com" target="_blank" rel="noreferrer">
-            <PLayIcon /> View Trailer
-          </a>
-        </p>
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          className={styles['movie__trailer']}
+          rel="noreferrer"
+        >
+          <PLayIcon /> View Trailer
+        </a>
       </div>
     </section>
   );

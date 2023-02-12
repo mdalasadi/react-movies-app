@@ -1,12 +1,59 @@
 .movie {
-    border: 0.1rem solid red;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 0;
+
+  &__image {
+    width: 20%;
+    box-shadow: 0.5rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.2);
+    border-radius: 0.5rem;
+  }
+
+  &__details {
+    padding: 0 1.5rem;
+  }
+
+  &__link-back a {
+    font-size: 1.6rem;
+    color: #0000ff;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  &__runtime,
+  &__genres,
+  &__desc {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  &__trailer {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #ff0000;
+    color: #fff;
 
-    &__image {
-        width: 20%;
+    > svg {
+      fill: #fff;
+      transform: scale(0.85);
     }
-
-    &__details {
-    }
+  }
 }
