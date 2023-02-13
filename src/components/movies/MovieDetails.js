@@ -14,7 +14,7 @@ function MovieDetails() {
       <div className={styles['movie__details']}>
         <div className={styles['movie__link-back']}>
           <Link to="/">
-            <i>&lt;</i> Go Back
+            <i>&larr;</i> Go Back
           </Link>
         </div>
         <h2 className={styles['movie__title']}>Violent Night</h2>
