@@ -7,7 +7,7 @@ function Footer() {
   const currentYear = new Date().getUTCFullYear();
 
   return (
-    <div className={styles['footer']}>
+    <footer className={styles['footer']}>
       <Container className={styles['footer__content']}>
         <p className={styles['footer__copyright']}>
           &copy; <span>{currentYear}</span> Muhammad Alasadi, All rights
@@ -22,7 +22,7 @@ function Footer() {
           <GitHubIcon className={styles['footer__icon']} /> Repository
         </a>
       </Container>
-    </div>
+    </footer>
   );
 }
 
