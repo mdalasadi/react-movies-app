@@ -39,11 +39,11 @@ function Header() {
               Upcoming
             </NavLink>
           </li>
-          <li className={styles['navbar__item']}>
+          {/* <li className={styles['navbar__item']}>
             <a href="/" className={styles['navbar__link']}>
               Genre
             </a>
-          </li>
+          </li> */}
           <li className={styles['navbar__item']}>
             <input
               type="search"
