@@ -9,33 +9,6 @@ function Movies() {
       <Link to="/id">
         <Poster />
       </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
-      <Link to="/id">
-        <Poster />
-      </Link>
     </div>
   );
 }
