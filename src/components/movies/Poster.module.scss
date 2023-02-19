@@ -19,5 +19,11 @@
     font-size: 1.4rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
+
+    :first-child {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
   }
 }
