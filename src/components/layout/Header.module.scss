@@ -24,6 +24,11 @@
 
   &__link {
     color: #333;
+    padding-bottom: 2.3rem;
+    
+    &:hover {
+      border-bottom: 0.1rem solid #868788;
+    }
   }
 
   &__search {
