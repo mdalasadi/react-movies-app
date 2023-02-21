@@ -3,12 +3,19 @@ import Poster from './Poster';
 import { Link } from 'react-router-dom';
 import styles from './Movies.module.scss';
 
-function Movies() {
+function Movies(props) {
   return (
     <div className={styles['movies']}>
-      <Link to="/id">
-        <Poster />
-      </Link>
+      {props.movies.map((poster) => (
+        <Link key={poster.id} to={`/${poster.id}`}>
+          <Poster
+            image={poster.image}
+            title={poster.title}
+            rate={poster.rate}
+            date={poster.release_date.getFullYear()}
+          />
+        </Link>
+      ))}
     </div>
   );
 }
