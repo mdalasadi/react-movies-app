@@ -4,7 +4,7 @@ import Container from '../components/ui/Container';
 import styles from './Pages.module.scss';
 
 function PopularMovies() {
-  const [movies, setMovies] = useState([]);
+  const [PopularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Popular Movies';
@@ -18,7 +18,7 @@ function PopularMovies() {
       .then((data) => {
         console.log(data);
 
-        setMovies(
+        setPopularMovies(
           data.results.map((movie) => ({
             id: movie.id,
             image: movie.poster_path,
@@ -37,7 +37,7 @@ function PopularMovies() {
       <p className={styles['lead']}>
         Browse thousands of Popular Movies through TMDB API
       </p>
-      <Movies movies={movies} />
+      <Movies movies={PopularMovies} />
     </Container>
   );
 }
