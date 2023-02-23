@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -8,9 +8,17 @@ import UpcomingMovies from './pages/UpcomingMovies';
 import Movie from './pages/MoviePage';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  function getSearchQueryHandler(query) {
+    setSearchQuery(query);
+  }
+
+  console.log(searchQuery);
+
   return (
     <>
-      <Header />
+      <Header onGetSearchQuery={getSearchQueryHandler} />
       <Routes>
         <Route path="/" element={<PopularMovies />} />
         <Route path="/popular" element={<PopularMovies />} />

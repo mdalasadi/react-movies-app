@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Container from '../ui/Container';
 import styles from './Header.module.scss';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 
-function Header() {
+function Header(props) {
+  const searchInput = useRef();
+
+  function submitHandler(event) {
+    event.preventDefault();
+    const searchQuery = searchInput.current.value.trim();
+    if (searchQuery === '') return;
+    props.onGetSearchQuery(searchQuery);
+    searchInput.current.value = '';
+  }
+
   return (
     <nav className={styles['navbar']}>
       <Container className={styles['navbar__container']}>
@@ -45,11 +55,14 @@ function Header() {
             </a>
           </li> */}
           <li className={styles['navbar__item']}>
-            <input
-              type="search"
-              className={styles['navbar__search']}
-              placeholder="search movies..."
-            />
+            <form onSubmit={submitHandler}>
+              <input
+                type="search"
+                ref={searchInput}
+                className={styles['navbar__search']}
+                placeholder="search movies..."
+              />
+            </form>
           </li>
         </ul>
       </Container>
