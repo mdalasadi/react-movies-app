@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
 import Container from '../ui/Container';
 import styles from './Header.module.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 
-function Header(props) {
+function Header() {
   const searchInput = useRef();
+  const navigate = useNavigate();
 
   function submitHandler(event) {
     event.preventDefault();
     const searchQuery = searchInput.current.value.trim();
     if (searchQuery === '') return;
-    props.onGetSearchQuery(searchQuery);
+    navigate(`/search/${searchQuery}`);
     searchInput.current.value = '';
   }
 

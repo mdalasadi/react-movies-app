@@ -6,24 +6,18 @@ import PopularMovies from './pages/PopularMovies';
 import TopMovies from './pages/TopMovies';
 import UpcomingMovies from './pages/UpcomingMovies';
 import Movie from './pages/MoviePage';
+import SearchResultsPage from './pages/SearchResultsPage';
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  function getSearchQueryHandler(query) {
-    setSearchQuery(query);
-  }
-
-  console.log(searchQuery);
-
   return (
     <>
-      <Header onGetSearchQuery={getSearchQueryHandler} />
+      <Header />
       <Routes>
         <Route path="/" element={<PopularMovies />} />
         <Route path="/popular" element={<PopularMovies />} />
         <Route path="/top" element={<TopMovies />} />
         <Route path="/upcoming" element={<UpcomingMovies />} />
+        <Route path="/search/*" element={<SearchResultsPage />} />
         <Route path="/id" element={<Movie />} />
       </Routes>
       <Footer />
