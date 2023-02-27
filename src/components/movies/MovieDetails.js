@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PLayIcon from '../../assets/icons/PlayIcon';
 import styles from './MovieDetails.module.scss';
+import { useParams } from 'react-router-dom';
 
 function MovieDetails() {
+  const x = useParams();
+
+  console.log(x)
+
   return (
     <section className={styles['movie']}>
       <img
