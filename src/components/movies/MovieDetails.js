@@ -2,17 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PLayIcon from '../../assets/icons/PlayIcon';
 import styles from './MovieDetails.module.scss';
-import { useParams } from 'react-router-dom';
 
-function MovieDetails() {
-  const x = useParams();
-
-  console.log(x)
+function MovieDetails({ movieDetails }) {
+  console.log(movieDetails);
 
   return (
     <section className={styles['movie']}>
       <img
-        src="https://image.tmdb.org/t/p/original/1XSYOP0JjjyMz1irihvWywro82r.jpg"
+        src={`https://image.tmdb.org/t/p/original/${
+          movieDetails?.poster ?? ''
+        }`}
         alt="movie poster"
         className={styles['movie__image']}
       />
@@ -22,22 +21,24 @@ function MovieDetails() {
             <i>&larr;</i> Go Back
           </Link>
         </div>
-        <h2 className={styles['movie__title']}>Violent Night</h2>
+        <h2 className={styles['movie__title']}>{movieDetails?.title ?? ''}</h2>
         <p className={styles['movie__runtime']}>
-          Runtime: <span>1 hr & 47 min</span>
+          Runtime: <span>{movieDetails?.runtime ?? ''}</span>
         </p>
         <p className={styles['movie__genres']}>
-          Genres: <span>Romance, Drama</span>
+          Genres:
+          <span>
+            {movieDetails?.genres.map((genre) => genre.name).join(', ') ?? ''}
+          </span>
         </p>
         <p className={styles['movie__desc']}>
           Description:
-          <span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
-            natus molestias perferendis incidunt est ad?
-          </span>
+          <span> {movieDetails?.desc ?? ''}</span>
         </p>
         <a
-          href="https://youtube.com"
+          href={`https://www.youtube.com/watch?v=${
+            movieDetails?.trailer ?? ''
+          }`}
           target="_blank"
           className={styles['movie__trailer']}
           rel="noreferrer"
