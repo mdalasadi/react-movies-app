@@ -26,10 +26,7 @@ function MovieDetails({ movieDetails }) {
           Runtime: <span>{movieDetails?.runtime ?? ''}</span>
         </p>
         <p className={styles['movie__genres']}>
-          Genres:
-          <span>
-            {movieDetails?.genres.map((genre) => genre.name).join(', ') ?? ''}
-          </span>
+          Genres: <span>{movieDetails?.genres?.map((genre) => genre.name).join(', ') ?? ''}</span>
         </p>
         <p className={styles['movie__desc']}>
           Description:
