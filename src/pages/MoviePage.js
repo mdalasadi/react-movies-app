@@ -4,14 +4,14 @@ import MovieDetails from '../components/movies/MovieDetails';
 import { useParams } from 'react-router-dom';
 
 function MoviePage() {
-  const [movieDetails, setMovieDetails] = useState();
+  const [movieDetails, setMovieDetails] = useState({});
   const { '*': movieID } = useParams();
 
   console.log(movieID);
 
   useEffect(() => {
-    document.title = 'MovieMosaic || Violent Night';
-  }, []);
+    document.title = `MovieMosaic || ${movieDetails?.title ?? ''}`;
+  }, [movieDetails.title]);
 
   useEffect(() => {
     async function fetchData() {
