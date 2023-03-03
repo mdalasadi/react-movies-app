@@ -7,11 +7,11 @@ function MoviePage() {
   const [movieDetails, setMovieDetails] = useState({});
   const { '*': movieID } = useParams();
 
-  console.log(movieID);
+  const { title } = movieDetails;
 
   useEffect(() => {
-    document.title = `MovieMosaic || ${movieDetails?.title ?? ''}`;
-  }, [movieDetails.title]);
+    document.title = `MovieMosaic || ${title ?? ''}`;
+  }, [title]);
 
   useEffect(() => {
     async function fetchData() {
