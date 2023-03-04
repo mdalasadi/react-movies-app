@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Movies from '../components/movies/Movies';
 import Container from '../components/ui/Container';
+import Pagination from '../components/pagination/Pagination';
 import styles from './Pages.module.scss';
 import { useParams } from 'react-router-dom';
 
@@ -37,6 +38,7 @@ function PopularMovies() {
     <Container>
       <h1 className={styles['title']}>You're Searched For:</h1>
       <Movies movies={searchResults} />
+      <Pagination />
     </Container>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Movies from '../components/movies/Movies';
 import Container from '../components/ui/Container';
+import Pagination from '../components/pagination/Pagination';
 import styles from './Pages.module.scss';
 
 function TopMovies() {
@@ -38,6 +39,7 @@ function TopMovies() {
         Browse thousands of Top Movies through TMDB API
       </p>
       <Movies movies={topMovies} />
+      <Pagination />
     </Container>
   );
 }

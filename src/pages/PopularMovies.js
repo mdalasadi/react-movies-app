@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Movies from '../components/movies/Movies';
 import Container from '../components/ui/Container';
+import Pagination from '../components/pagination/Pagination';
 import styles from './Pages.module.scss';
 
 function PopularMovies() {
@@ -38,6 +39,7 @@ function PopularMovies() {
         Browse thousands of Popular Movies through TMDB API
       </p>
       <Movies movies={PopularMovies} />
+      <Pagination />
     </Container>
   );
 }
