@@ -1,18 +1,33 @@
 .pagination {
-  border: 0.1rem solid red;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: fit-content;
-  margin: 3rem auto;
+  margin: 4rem auto;
 
   &__button {
     cursor: pointer;
-    border: none;
-    background-color: aqua;
+    border: 0.1rem solid #868e96;
+    background-color: transparent;
     padding: 1rem 2rem;
     width: 10rem;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+
+    &--next {
+      border-radius: 0 1rem 1rem 0;
+    }
+
+    &--prev {
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    &:hover {
+      background-color: #dee2e6;
+    }
   }
 
   &__pages {
@@ -22,6 +37,29 @@
   &__page {
     cursor: pointer;
     padding: 1rem;
-    border: 1px solid blue;
+    border-top: 0.1rem solid #868e96;
+    border-bottom: 0.1rem solid #868e96;
+    border-right: 0.1rem solid #868e96;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: #dee2e6;
+    }
+  }
+
+  .disabled {
+    background-color: #d3d3d3;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .active {
+    color: #e67700;
   }
 }
