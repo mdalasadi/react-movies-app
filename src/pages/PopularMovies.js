@@ -6,6 +6,7 @@ import styles from './Pages.module.scss';
 
 function PopularMovies() {
   const [PopularMovies, setPopularMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Popular Movies';
@@ -13,7 +14,7 @@ function PopularMovies() {
 
   useEffect(() => {
     fetch(
-      'https://api.themoviedb.org/3/movie/popular?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=1'
+      `https://api.themoviedb.org/3/movie/popular?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=${currentPage}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -30,7 +31,11 @@ function PopularMovies() {
         );
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [currentPage]);
+
+  function changePageHandler(page) {
+    setCurrentPage(page);
+  }
 
   return (
     <Container>
@@ -39,7 +44,7 @@ function PopularMovies() {
         Browse thousands of Popular Movies through TMDB API
       </p>
       <Movies movies={PopularMovies} />
-      <Pagination />
+      <Pagination currentPage={currentPage} onChangePage={changePageHandler} />
     </Container>
   );
 }
