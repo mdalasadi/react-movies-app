@@ -6,6 +6,8 @@ import styles from './Pages.module.scss';
 
 function UpcomingMovies() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Upcoming Movies';
@@ -13,7 +15,7 @@ function UpcomingMovies() {
 
   useEffect(() => {
     fetch(
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=1'
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=${currentPage}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -28,9 +30,15 @@ function UpcomingMovies() {
             release_date: new Date(movie.release_date),
           }))
         );
+
+        setTotalPages(data.total_pages);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [currentPage]);
+
+  function changePageHandler(page) {
+    setCurrentPage(page);
+  }
 
   return (
     <Container>
@@ -39,7 +47,11 @@ function UpcomingMovies() {
         Browse thousands of Upcoming Movies through TMDB API
       </p>
       <Movies movies={upcomingMovies} />
-      <Pagination />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onChangePage={changePageHandler}
+      />
     </Container>
   );
 }

@@ -6,6 +6,8 @@ import styles from './Pages.module.scss';
 
 function TopMovies() {
   const [topMovies, setTopMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Top Movies';
@@ -13,7 +15,7 @@ function TopMovies() {
 
   useEffect(() => {
     fetch(
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=1'
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=db32cb7fb5b3f64b6035a85dbfcd086d&language=en-US&page=${currentPage}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -28,9 +30,15 @@ function TopMovies() {
             release_date: new Date(movie.release_date),
           }))
         );
+
+        setTotalPages(data.total_pages);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [currentPage]);
+
+  function changePageHandler(page) {
+    setCurrentPage(page);
+  }
 
   return (
     <Container>
@@ -39,7 +47,11 @@ function TopMovies() {
         Browse thousands of Top Movies through TMDB API
       </p>
       <Movies movies={topMovies} />
-      <Pagination />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onChangePage={changePageHandler}
+      />
     </Container>
   );
 }

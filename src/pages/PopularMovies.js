@@ -7,6 +7,7 @@ import styles from './Pages.module.scss';
 function PopularMovies() {
   const [PopularMovies, setPopularMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Popular Movies';
@@ -29,6 +30,8 @@ function PopularMovies() {
             release_date: new Date(movie.release_date),
           }))
         );
+
+        setTotalPages(data.total_pages);
       })
       .catch((error) => console.error(error));
   }, [currentPage]);
@@ -44,7 +47,11 @@ function PopularMovies() {
         Browse thousands of Popular Movies through TMDB API
       </p>
       <Movies movies={PopularMovies} />
-      <Pagination currentPage={currentPage} onChangePage={changePageHandler} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onChangePage={changePageHandler}
+      />
     </Container>
   );
 }
