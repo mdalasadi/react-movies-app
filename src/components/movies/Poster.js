@@ -1,12 +1,13 @@
 import React from 'react';
 import StarIcon from '../../assets/icons/StarIcon';
 import styles from './Poster.module.scss';
+import noPoster from '../../assets/images/no_poster.jpeg'
 
 function Poster(props) {
   return (
     <div className={styles['movies__poster']}>
       <img
-        src={`https://image.tmdb.org/t/p/original/${props.image}`}
+        src={`${props.image ? 'https://image.tmdb.org/t/p/original/' + props.image : noPoster}`}
         alt={`${props.title} poster`}
         className={styles['movies__image']}
       />
