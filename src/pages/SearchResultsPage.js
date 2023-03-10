@@ -4,12 +4,14 @@ import Container from '../components/ui/Container';
 import Pagination from '../components/pagination/Pagination';
 import styles from './Pages.module.scss';
 import { useParams } from 'react-router-dom';
+import Loader from '../components/ui/Loader';
 
 function PopularMovies() {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [showPagination, setShowPagination] = useState(false);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
   const { '*': searchQuery } = useParams();
 
   useEffect(() => {
@@ -23,6 +25,7 @@ function PopularMovies() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setDataIsLoaded(true);
 
         setSearchResults(
           data.results.map((movie) => ({
@@ -44,17 +47,27 @@ function PopularMovies() {
     setCurrentPage(page);
   }
 
+  let content = <Loader />;
+
+  if (dataIsLoaded) {
+    content = (
+      <>
+        <Movies movies={searchResults} />
+        {showPagination && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onChangePage={changePageHandler}
+          />
+        )}
+      </>
+    );
+  }
+
   return (
     <Container>
       <h1 className={styles['title']}>You're Searched For:</h1>
-      <Movies movies={searchResults} />
-      {showPagination && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onChangePage={changePageHandler}
-        />
-      )}
+      {content}
     </Container>
   );
 }

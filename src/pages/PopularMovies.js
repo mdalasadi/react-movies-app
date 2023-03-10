@@ -3,11 +3,13 @@ import Movies from '../components/movies/Movies';
 import Container from '../components/ui/Container';
 import Pagination from '../components/pagination/Pagination';
 import styles from './Pages.module.scss';
+import Loader from '../components/ui/Loader';
 
 function PopularMovies() {
   const [PopularMovies, setPopularMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
   useEffect(() => {
     document.title = 'MovieMosaic || Popular Movies';
@@ -20,6 +22,8 @@ function PopularMovies() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+
+        setDataIsLoaded(true);
 
         setPopularMovies(
           data.results.map((movie) => ({
@@ -40,18 +44,28 @@ function PopularMovies() {
     setCurrentPage(page);
   }
 
+  let content = <Loader />;
+
+  if (dataIsLoaded) {
+    content = (
+      <>
+        <Movies movies={PopularMovies} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onChangePage={changePageHandler}
+        />
+      </>
+    );
+  }
+
   return (
     <Container>
       <h1 className={styles['title']}>Popular Movies</h1>
       <p className={styles['lead']}>
         Browse thousands of Popular Movies through TMDB API
       </p>
-      <Movies movies={PopularMovies} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onChangePage={changePageHandler}
-      />
+      {content}
     </Container>
   );
 }
