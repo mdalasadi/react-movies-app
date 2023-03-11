@@ -15,7 +15,6 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
-  height: 100%;
 
   @media only screen and (max-width: 61.25em) {
     font-size: 50%;
@@ -28,7 +27,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: #f8f9fa;
-  height: 100%;
 }
 
 ul {
