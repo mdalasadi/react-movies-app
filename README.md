@@ -1,5 +1,7 @@
 # Movies App
 
+[Live Demo](https://react-movies-app-v1.netlify.app/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
