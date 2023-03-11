@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Pagination.module.scss';
 
 function Pagination(props) {
   const [pageNumber, setPageNumber] = useState(1);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const changePageClickHandler = (event) => {
     props.onChangePage(+event.target.dataset.page);
+    navigate(`${pathname}?page=${+event.target.dataset.page}`);
   };
 
   const nextBtnClickHandler = () => {
@@ -13,6 +17,7 @@ function Pagination(props) {
 
     setPageNumber((prevState) => prevState + 3);
     props.onChangePage(pageNumber + 3);
+    navigate(`${pathname}/?page=${pageNumber + 3}`);
   };
 
   const prevBtnClickHandler = () => {
@@ -20,6 +25,7 @@ function Pagination(props) {
 
     setPageNumber((prevState) => prevState - 3);
     props.onChangePage(pageNumber - 3);
+    navigate(`${pathname}?page=${pageNumber - 3}`);
   };
 
   return (
