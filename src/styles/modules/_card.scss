@@ -1,0 +1,60 @@
+.movies-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+
+.card {
+    flex: 1 0 230px;
+    margin: 1.5rem;
+
+    &:hover .poster {
+        box-shadow: 0 8px 16px 0 rgba($black, 0.3);
+    }
+
+    .poster {
+        width: 100%;
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 0.5rem;
+        transition: 0.27s ease;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: $font-semi;
+        color: $black;
+        margin: 1rem 0 1.5rem;
+    }
+
+    a,
+    p {
+        color: $dark-gray;
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .rating {
+        height: auto;
+        width: auto;
+        display: inline-flex;
+
+        p {
+            margin-right: 0.5rem;
+        }
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .info {
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

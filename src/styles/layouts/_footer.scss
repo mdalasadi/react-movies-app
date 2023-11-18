@@ -1,0 +1,27 @@
+footer {
+    background-color: $light-gray;
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 5rem 0;
+
+        p, a {
+            margin: 0;
+            font-size: 1.4rem;
+            color: black;
+        }
+
+        a:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.cast {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+        margin: 10px;
+    }
+}

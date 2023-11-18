@@ -1,0 +1,44 @@
+.pagination {
+    margin: 3rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .plus {
+        margin-left: auto;
+    }
+}
+
+.button {
+    display: inline-block;
+    background-color: #fde9e9;
+    color: $primary-color;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 2rem;
+    transition: 0.27s ease;
+
+    &.flex {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    svg {
+        margin-right: 1rem;
+        path {
+            fill: $primary-color;
+        }
+    }
+
+    &:hover {
+        svg path {
+            fill: white;
+        }
+        background-color: $primary-color;
+        color: #e9f0fd;
+    }
+}

@@ -1,0 +1,73 @@
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.wrapper {
+    padding-top: 14.7rem;
+    background-color: lighten($light-gray, 3%);
+}
+
+.app-error, .no-results, .loading {
+    height: calc(100vh - 116px);
+    margin-top: -14.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    strong {
+        color: $primary-color;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    p {
+        margin: 3rem;
+        font-size: 1.6rem;
+        color: $dark-gray;
+    }
+}
+
+.previous-location {
+    @media screen and (min-width: 640px) {
+        margin: 0 0 3rem;
+    }
+    @media screen and (min-width: 1024px) {
+        margin: 0 0 5rem;
+    }
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin: 3rem 0;
+
+    p {
+        margin: 0;
+    }
+
+    &:hover {
+        color: $primary-color;
+
+        svg path {
+            fill: $primary-color;
+        }
+    }
+
+    svg {
+        height: 12px;
+        width: 12px;
+        margin-right: 1rem;
+    }
+}
